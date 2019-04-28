@@ -1,5 +1,5 @@
-export const baseUrl = window.location.origin + '/';
-
+// export const baseUrl = window.location.origin + '/';
+export const baseUrl = '/api';
 
 export const setFormData = (obj) => {
     const formData = new FormData();

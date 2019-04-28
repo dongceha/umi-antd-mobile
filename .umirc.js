@@ -12,30 +12,63 @@ export default {
       dynamicImport: false,
       dll: true,
       routes: {
-        exclude: [
-          /model\.(j|t)sx?$/,
-          /service\.(j|t)sx?$/,
-          /models\//,
-          /components\//,
-          /services\//,
-        ]
+        path: '/',
+        component: '../layouts/index',
+        routes: [{
+            path: '/',
+            redirect: 'home'
+          },
+          {
+            path: 'home',
+            component: './home/index',
+            title: '第一夜'
+          },
+          {
+            path: 'login',
+            component: './login/index',
+            title: '第二夜'
+          },
+          {
+            path: 'class',
+            component: './class/index',
+            title: '第三夜'
+          },
+          {
+            path: 'my',
+            component: './my/index',
+            title: '第四夜'
+          },
+          {
+            path: 'movies',
+            component: './movies/index',
+            title: '第五夜'
+          }
+        ],
       },
       hardSource: false,
     }],
   ],
   alias:{
-    components:path.resolve(__dirname,'src/components'),
-        utils:path.resolve(__dirname,'src/utils'),
-        services:path.resolve(__dirname,'src/services'),
-        models:path.resolve(__dirname,'src/models'),
-        // themes:path.resolve(__dirname,'src/themes'),
-        images:path.resolve(__dirname,'src/assets')
+    components: path.resolve(__dirname,'src/components'),
+    utils: path.resolve(__dirname,'src/utils'),
+    services: path.resolve(__dirname,'src/services'),
+    models: path.resolve(__dirname,'src/models'),
+    // themes:path.resolve(__dirname,'src/themes'),
+    images: path.resolve(__dirname,'src/assets')
   },
-  // proxy: {
-  //   "/api": {
-  //     "target": 'http://192.168.2.120:8081',
-  //     "changeOrigin": true,
-  //     "pathRewrite": { "^/api" : "/api" }
-  //   }
-  // }
+  extraPostCSSPlugins: [
+    require('postcss-px2rem')({
+      remUnit: 50,
+      exclude: /node_modules/,
+    })
+  ],
+  proxy: {
+    '/api': {
+      target: 'http://api.douban.com/v2', // 设置代理
+      changeOrigin: true,
+      pathRewrite: {
+        '^/api': ''
+      }
+    }
+  }
 }

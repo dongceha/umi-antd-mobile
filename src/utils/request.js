@@ -107,7 +107,7 @@ function proxyRequest(url, options, showError = true) {
     if (response && response.token) {
         setToken(response.token);
     }
-    if (response.err_code === -1 || response.code === 1) {
+    if (response.title || response.code === 1) {
       // return response.data || {};
       return response || {};
     }

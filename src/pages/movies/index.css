@@ -1,0 +1,50 @@
+.movies {
+  background: #eee;
+  min-height: calc(-20vh);
+}
+.movies .movies-container {
+  margin: 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: white;
+  border-radius: 10px;
+  padding-top: 10px;
+}
+.movies .movies-container .itemempty {
+  display: inline-block;
+  width: 30%;
+  height: 0;
+}
+.movies .movies-container div {
+  width: 30%;
+  height: 150px;
+}
+.movies .movies-container div img {
+  width: 100%;
+  height: calc(70%);
+  border-radius: 3px;
+}
+.movies .movies-container div .movie-title {
+  text-align: center;
+  color: #333;
+  padding: 0;
+  font-size: 12px;
+  line-height: 18px;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+:global .customNav {
+  background: transparent;
+  color: #8e8e8e;
+}
+:global .customNav .am-navbar-left {
+  font-size: 14px;
+  flex: auto;
+  width: 40%;
+}
+:global .customNav .am-navbar-right {
+  font-size: 14px;
+}
