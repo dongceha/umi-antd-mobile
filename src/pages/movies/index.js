@@ -72,7 +72,7 @@ class Movies extends Component {
                 subjects && subjects.length > 0 && subjects.map((item) => {
                   return (
                     <div key={item.id}>
-                      <Link to="movie-detail">
+                      <Link to={`movie-detail?id=${item.id}`}>
                         <img referrerPolicy="no-referrer" src={item.images.medium} />
                         <p className={styles['movie-title']}>{item.title}</p>
                       </Link>

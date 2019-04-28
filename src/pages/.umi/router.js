@@ -12,14 +12,14 @@ let routes = [
     "component": require('../../layouts/index.js').default,
     "routes": [
       {
+        "path": "/movie-detail",
+        "exact": true,
+        "component": require('../movie-detail/index.js').default
+      },
+      {
         "path": "/class",
         "exact": true,
         "component": require('../class/index.js').default
-      },
-      {
-        "path": "/home",
-        "exact": true,
-        "component": require('../home/index.js').default
       },
       {
         "path": "/home/models/home",
@@ -35,6 +35,16 @@ let routes = [
         "path": "/login",
         "exact": true,
         "component": require('../login/index.js').default
+      },
+      {
+        "path": "/home",
+        "exact": true,
+        "component": require('../home/index.js').default
+      },
+      {
+        "path": "/movie-detail/models/moviesDetail",
+        "exact": true,
+        "component": require('../movie-detail/models/moviesDetail.js').default
       },
       {
         "path": "/movies",

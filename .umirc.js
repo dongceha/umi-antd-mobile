@@ -42,6 +42,11 @@ export default {
             path: 'movies',
             component: './movies/index',
             title: '第五夜'
+          },
+          {
+            path: 'movie-detail',
+            component: './movie-detail/index',
+            title: '第六夜'
           }
         ],
       },

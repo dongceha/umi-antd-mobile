@@ -1,0 +1,49 @@
+.detail {
+  margin: 10px;
+}
+.detail .title {
+  font-size: 16px;
+  color: #999;
+}
+.detail .actors {
+  line-height: 1.5;
+  font-size: 12px;
+  color: #999;
+  margin: 10px 0;
+}
+.detail .customers {
+  display: flex;
+  justify-content: space-between;
+}
+.detail .customers div {
+  width: 44%;
+  border: 1px solid;
+  height: 26px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 26px;
+  border-radius: 5px;
+}
+.detail .customers div.want {
+  border-color: #ffb712;
+  color: #ffb712;
+}
+.detail .customers div.wanted {
+  border-color: yellowgreen;
+  color: yellowgreen;
+}
+.detail img {
+  width: 100%;
+}
+.detail .describute h2 {
+  font-size: 16px;
+  color: #999;
+  margin: 10px 0;
+}
+.detail .describute p {
+  font-size: 14px;
+  line-height: 1.2;
+  color: #666;
+  white-space: pre-wrap;
+  margin-top: 0;
+}
