@@ -22,7 +22,6 @@ export default {
       if(!response){
         return;
       }
-      console.log(response)
       if (response.subjects.length === 0) {
         yield put({
           type: 'setHasMore',
@@ -48,7 +47,6 @@ export default {
       }
     },
     setHasMore(state, { payload }) {
-      console.log(payload)
       return {
         ...state,
         hasMore: payload

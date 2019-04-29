@@ -6,6 +6,7 @@ import {
 } from 'antd-mobile';
 import CustomHeader from 'components/CustomHeader/CustomHeader';
 import styles from './index.less'
+// import Prompt from 'umi/prompt';
 
 @connect(({ moviesDetail, loading }) => ({ 
   moviesDetail,

@@ -7,9 +7,6 @@ import {
 import router from 'umi/router';
 import Link from 'umi/link';
 import InfiniteScroll from 'react-infinite-scroller';
-import {
-  Scrollbars
-} from 'react-custom-scrollbars';
 import CustomHeader from 'components/CustomHeader/CustomHeader';
 import styles from './index.less'
 
@@ -27,7 +24,6 @@ class Movies extends Component {
     this.loadFunc();
   }
   loadFunc = () => {
-    console.log('loadMore')
     const {
       dispatch,
       movies: { start }
