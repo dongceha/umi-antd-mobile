@@ -19,7 +19,6 @@ export default {
       if(!response){
         return;
       }
-      console.log(response)
       yield put({
         type: 'setData',
         payload: response

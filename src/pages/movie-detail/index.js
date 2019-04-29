@@ -17,9 +17,7 @@ class MoviesDetail extends Component {
     this.getDetail();
   }
   getDetail = () => {
-    console.log(this.props)
     const { dispatch, location: { query: id} } = this.props;
-    console.log(id)
     dispatch({
       type: 'moviesDetail/getMovieById',
       payload: id.id
@@ -43,7 +41,7 @@ class MoviesDetail extends Component {
           <div>
             <img referrerPolicy="no-referrer" src={movieDetails.images ? movieDetails.images.large : ''} />
           </div>
-          <div className={styles.actors}>{this.getMeta(movieDetails)}</div>
+          <div className={styles.actors}>{movieDetails.casts && this.getMeta(movieDetails)}</div>
           <div className={styles.customers}>
             <div className={styles.want}>想看
               {

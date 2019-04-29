@@ -2,69 +2,117 @@ import React from 'react';
 import { Router as DefaultRouter, Route, Switch } from 'react-router-dom';
 import dynamic from 'umi/dynamic';
 import renderRoutes from 'umi/_renderRoutes';
-
+import _dvaDynamic from 'dva/dynamic'
 
 let Router = require('dva/router').routerRedux.ConnectedRouter;
 
 let routes = [
   {
     "path": "/",
-    "component": require('../../layouts/index.js').default,
+    "component": _dvaDynamic({
+  
+  component: () => import('../../layouts/index.js'),
+  
+}),
     "routes": [
-      {
-        "path": "/movie-detail",
-        "exact": true,
-        "component": require('../movie-detail/index.js').default
-      },
       {
         "path": "/class",
         "exact": true,
-        "component": require('../class/index.js').default
-      },
-      {
-        "path": "/home/models/home",
-        "exact": true,
-        "component": require('../home/models/home.js').default
+        "component": _dvaDynamic({
+  
+  component: () => import('../class/index.js'),
+  
+})
       },
       {
         "path": "/",
         "exact": true,
-        "component": require('../index.js').default
+        "component": _dvaDynamic({
+  
+  component: () => import('../index.js'),
+  
+})
       },
       {
         "path": "/login",
         "exact": true,
-        "component": require('../login/index.js').default
+        "component": _dvaDynamic({
+  
+  component: () => import('../login/index.js'),
+  
+})
       },
       {
-        "path": "/home",
+        "path": "/movie-detail",
         "exact": true,
-        "component": require('../home/index.js').default
+        "component": _dvaDynamic({
+  app: window.g_app,
+models: () => [
+  import('D:/github/umi-antd-mobile/src/pages/movie-detail/models/moviesDetail.js').then(m => { return { namespace: 'moviesDetail',...m.default}})
+],
+  component: () => import('../movie-detail/index.js'),
+  
+})
       },
       {
         "path": "/movie-detail/models/moviesDetail",
         "exact": true,
-        "component": require('../movie-detail/models/moviesDetail.js').default
+        "component": _dvaDynamic({
+  app: window.g_app,
+models: () => [
+  import('D:/github/umi-antd-mobile/src/pages/movie-detail/models/moviesDetail.js').then(m => { return { namespace: 'moviesDetail',...m.default}})
+],
+  component: () => import('../movie-detail/models/moviesDetail.js'),
+  
+})
       },
       {
         "path": "/movies",
         "exact": true,
-        "component": require('../movies/index.js').default
+        "component": _dvaDynamic({
+  app: window.g_app,
+models: () => [
+  import('D:/github/umi-antd-mobile/src/pages/movies/models/movies.js').then(m => { return { namespace: 'movies',...m.default}})
+],
+  component: () => import('../movies/index.js'),
+  
+})
       },
       {
         "path": "/movies/models/movies",
         "exact": true,
-        "component": require('../movies/models/movies.js').default
+        "component": _dvaDynamic({
+  app: window.g_app,
+models: () => [
+  import('D:/github/umi-antd-mobile/src/pages/movies/models/movies.js').then(m => { return { namespace: 'movies',...m.default}})
+],
+  component: () => import('../movies/models/movies.js'),
+  
+})
       },
       {
         "path": "/my",
         "exact": true,
-        "component": require('../my/index.js').default
+        "component": _dvaDynamic({
+  app: window.g_app,
+models: () => [
+  import('D:/github/umi-antd-mobile/src/pages/my/models/my.js').then(m => { return { namespace: 'my',...m.default}})
+],
+  component: () => import('../my/index.js'),
+  
+})
       },
       {
         "path": "/my/models/my",
         "exact": true,
-        "component": require('../my/models/my.js').default
+        "component": _dvaDynamic({
+  app: window.g_app,
+models: () => [
+  import('D:/github/umi-antd-mobile/src/pages/my/models/my.js').then(m => { return { namespace: 'my',...m.default}})
+],
+  component: () => import('../my/models/my.js'),
+  
+})
       },
       {
         "component": () => React.createElement(require('D:/github/umi-antd-mobile/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: false })

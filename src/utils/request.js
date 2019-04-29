@@ -84,7 +84,8 @@ function request(url, options) {
     }
     new_url = url
   } else if (newOptions.method === 'GET') {
-    new_url = url + '?' + setUrlEncoded(newOptions.body)
+    const sp = url.indexOf('?') > -1 ? '&' : '?'
+    new_url = url + sp + setUrlEncoded(newOptions.body)
     delete newOptions.body
   }
 

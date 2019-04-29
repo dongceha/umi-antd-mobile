@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import BaseLayout from './baseLayout';
 
-const ULR_NO_LAYOUT = ['/', '/home', '/class', '/my'];
+const ULR_NO_LAYOUT = ['/' , '/class', '/my'];
 
 class Index extends Component {
   componentDidMount() {

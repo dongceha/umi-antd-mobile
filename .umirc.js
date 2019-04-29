@@ -9,19 +9,14 @@ export default {
     ['umi-plugin-react', {
       antd: true,
       dva: true,
-      dynamicImport: false,
+      dynamicImport: true,
       dll: true,
       routes: {
         path: '/',
         component: '../layouts/index',
         routes: [{
             path: '/',
-            redirect: 'home'
-          },
-          {
-            path: 'home',
-            component: './home/index',
-            title: '第一夜'
+            redirect: 'movies'
           },
           {
             path: 'login',

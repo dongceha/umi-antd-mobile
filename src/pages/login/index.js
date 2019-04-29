@@ -103,7 +103,7 @@ class LoginNew extends React.Component {
    * @return {Boolean} 当信息不完整时退出
    */
   submit() {
-    router.push('/home')
+    router.push('/movie')
   }
 
   /**

@@ -14,7 +14,4 @@ app.use(createLoading());
   app.use(plugin);
 });
 
-app.model({ namespace: 'moviesDetail', ...(require('D:/github/umi-antd-mobile/src/pages/movie-detail/models/moviesDetail.js').default) });
-app.model({ namespace: 'home', ...(require('D:/github/umi-antd-mobile/src/pages/home/models/home.js').default) });
-app.model({ namespace: 'movies', ...(require('D:/github/umi-antd-mobile/src/pages/movies/models/movies.js').default) });
-app.model({ namespace: 'my', ...(require('D:/github/umi-antd-mobile/src/pages/my/models/my.js').default) });
+
