@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'dva';
+import {
+  ActivityIndicator,
+  Icon
+} from 'antd-mobile';
 import CustomHeader from 'components/CustomHeader/CustomHeader';
 import styles from './index.less'
 
@@ -12,6 +16,12 @@ class MoviesDetail extends Component {
     super(props);
     this.state = {
     }
+  }
+  componentWillMount() {
+    const { dispatch } = this.props;
+    dispatch({
+      type: 'moviesDetail/clearData',
+    })
   }
   componentDidMount() {
     this.getDetail();
@@ -32,10 +42,24 @@ class MoviesDetail extends Component {
       ' / ' + movieDetail.directors[0].name + '(导演) / ' + cast;
   }
   render() {
-    const { moviesDetail: { movieDetails = {} }} = this.props;
+    const {
+      moviesDetail: {
+        movieDetails = {}
+      },
+      loading
+    } = this.props;
     return (
       <div>
-        <CustomHeader></CustomHeader>
+        <div className="toast">
+          <ActivityIndicator
+            toast
+            text="加载中"
+            animating={loading}
+          />
+        </div>
+        <CustomHeader
+          rightContent={true}
+        />
         <div className={styles.detail}>
           <h2 className={styles.title}>{movieDetails.title }&nbsp;{movieDetails.original_title}</h2>
           <div>

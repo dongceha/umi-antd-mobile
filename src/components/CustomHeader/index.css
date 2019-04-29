@@ -11,4 +11,7 @@
 .resetBg {
   background: white;
   color: #2384e8;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
 }

@@ -35,5 +35,11 @@ export default {
         movieDetails: payload,
       }
     },
+    clearData(state) {
+      return {
+        ...state,
+        movieDetails: {},
+      }
+    }
   }
 };
