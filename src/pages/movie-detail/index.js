@@ -63,7 +63,7 @@ class MoviesDetail extends Component {
         />
         <div className={styles.detail}>
           <h2 className={styles.title}>{movieDetails.title }&nbsp;{movieDetails.original_title}</h2>
-          <div>
+          <div>  
             <img referrerPolicy="no-referrer" src={movieDetails.images ? movieDetails.images.large : ''} />
           </div>
           <div className={styles.actors}>{movieDetails.casts && this.getMeta(movieDetails)}</div>
